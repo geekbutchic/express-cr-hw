@@ -42,7 +42,7 @@ router.get("/get-todo-by-id/:id", function (req, res) {
 
 router.get("/get-todos-by-done/:done", function (req, res) {
   const { done } = req.params;
-  let foundTodo = todos.findIndex((item) => item.game === done);
+  let foundTodo = todos.findIndex((item) => item.done === done);
   if (foundTodo === -1) {
     res.status(404).json({ message: "Please check name" });
   } else {
